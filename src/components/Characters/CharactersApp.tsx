@@ -6,6 +6,8 @@ import ListFilters from '../Filters/ListFilters'
 import SearchInput from '../Search/SearchInput'
 import { Title } from '../Title'
 import ListCharacters from './ListCharacters'
+import backgroundImage from '../img/background.png'
+
 
 const CharactersApp = () => {
 
@@ -31,8 +33,16 @@ const CharactersApp = () => {
 	}
 
 	return (
-		<main className='flex-grow justify-center px-4 sm:px-8 md:px-36 mt-32'>
-			<div className='flex items-center justify-center mt-8 mb-8'>
+		<main 
+			className='flex-grow justify-center px-4 sm:px-8 md:px-36 pt-32'
+			style={{
+				backgroundImage: `url(${backgroundImage})`, // Establece la imagen de fondo
+				backgroundSize: "contain", 
+				backgroundPosition: "center", 
+				minHeight: "100vh"
+			}}
+		>
+			<div className='flex items-center justify-center'>
 				<Title title={'Characters'} />
 			</div>
 			<div className='container mx-auto'>
@@ -44,7 +54,7 @@ const CharactersApp = () => {
 					</div>
 					<div className='mt-4'>
 						<div className='flex justify-between items-center px-40 my-4'>
-							<span className='text-lg font-bold'>Filters: </span>
+							<span className='text-white text-2xl font-bold'>Filters: </span>
 							<ListFilters valueStatus={valueStatus} valueGenders={valueGenders} valueSpecies={valueSpecies} />
 						</div>
 						<div className='flex justify-between items-center px-40'>

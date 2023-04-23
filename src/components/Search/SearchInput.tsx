@@ -4,7 +4,7 @@ const SearchInput = ({ handleChangeSearch }: { handleChangeSearch: Function }) =
   return (
     <div className='mr-4'>
       <input 
-        className='w-full rounded-lg h-12 outline-none px-5 text-lg bg-gray-00 border border-gray-700 text-black'
+        className='w-full rounded-lg h-12 outline-none px-5 text-lg bg-gray-00 border border-gray-700 ext-black::placeholder'
         type="text" 
         name="" 
         id="" 

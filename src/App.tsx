@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import CharactersApp from './components/Characters/CharactersApp';
 import EpisodiesApp from './components/Episodies/EpisodiesApp';
 import { HomeApp } from './components/Home/HomeApp';
+import HomeMainApp from './components/Home/HomeMainApp';
 import LocationApp from './components/Location/LocationApp';
 
 /**
@@ -20,11 +21,10 @@ function App() {
 
   return (
     <>
-      
       <Router>
         <HomeApp />
         <Routes>
-          <Route path="/" element={<CharactersApp />} />
+          <Route path="/" element={<HomeMainApp />} />
           <Route path="/characters" element={<CharactersApp />} />
           <Route path="/location" element={<LocationApp />} />
           <Route path="/episodies" element={<EpisodiesApp />} />

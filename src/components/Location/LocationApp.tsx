@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import SearchInput from '../Search/SearchInput';
 import { Title } from '../Title';
 import ListLocation from './ListLocation';
+import backgroundImage from '../img/background.png';
 
 const LocationApp = () => {
   
@@ -12,8 +13,16 @@ const LocationApp = () => {
 	}
 
   return (
-    <main className='flex-grow justify-center px-4 sm:px-8 md:px-36 mt-32'>
-      <div className='flex items-center justify-center mt-8 mb-8'>
+    <main 
+			className='flex-grow justify-center px-4 sm:px-8 md:px-36 pt-32'
+			style={{
+				backgroundImage: `url(${backgroundImage})`, // Establece la imagen de fondo
+				backgroundSize: "contain", 
+				backgroundPosition: "center", 
+				minHeight: "100vh"
+			}}
+		>
+      <div className='flex items-center justify-center'>
         <Title title={'Location'} />
       </div>
       <div className='container mx-auto'>

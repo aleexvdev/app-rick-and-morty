@@ -30,21 +30,21 @@ const Header = () => {
   }
 
 	return (
-		<header className={`flex items-center bg-white w-full h-20 px-4 sm:px-8 md:px-36 fixed top-0 z-10 ${scroll ? 'bg-gradient-to-b from-transparent to-gray-200' : ''}`}>
+		<header className={`flex items-center bg-transparent w-full h-20 px-4 sm:px-8 md:px-36 fixed top-0 z-10 ${scroll ? 'bg-gradient-to-b from-black to-gray-800 shadow-lg' : ''}`}>
 			<div className="flex-shrink-0">
 				<Link to="/" className="">
-					<h1 className='text-black text-3xl'>Rick & Morty</h1>
+					<h1 className='text-white text-3xl'>Rick & Morty</h1>
 				</Link>
 			</div>
 			<div className="flex ml-auto">
 				<div className='flex mr-4'>
 					<NavBar />
 				</div>
-				<div className="mr-2">
+				{/* <div className="mr-2">
 					<button onClick={toggleDarkMode}>
 						{ darkMode ?  <MdDarkMode className='text-2xl' /> : <MdWbSunny className='text-2xl' /> }
 					</button>
-				</div>
+				</div> */}
 			</div>
 		</header>
 	)
