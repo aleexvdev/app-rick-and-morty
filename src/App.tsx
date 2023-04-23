@@ -1,26 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Fragment } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import CharactersApp from './components/Characters/CharactersApp';
+import EpisodiesApp from './components/Episodies/EpisodiesApp';
+import { HomeApp } from './components/Home/HomeApp';
+import LocationApp from './components/Location/LocationApp';
 
+/**
+ * 
+ * @returns 
+ * <Route path="/:id" element={<CardDetails />} /> 
+
+         <Route path="/episodes" element={<Episodes />} /> 
+          <Route path="/episodes/:id" element={<CardDetails />} /> 
+
+      <Route path="/location" element={<Location />} /> 
+  <Route path="/location/:id" element={<CardDetails />} /> 
+ */
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      
+      <Router>
+        <HomeApp />
+        <Routes>
+          <Route path="/" element={<CharactersApp />} />
+          <Route path="/characters" element={<CharactersApp />} />
+          <Route path="/location" element={<LocationApp />} />
+          <Route path="/episodies" element={<EpisodiesApp />} />
+        </Routes>
+      </Router>
+    </>
   );
 }
+
 
 export default App;
