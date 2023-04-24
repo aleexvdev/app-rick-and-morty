@@ -57,7 +57,7 @@ const Header = () => {
 	const active4 = (activeEpisode) ? 'border-b-4 border-yellow-300 font-bold text-1xl text-yellow-300' : '';
 	
 	return (
-		<header className={`flex items-center bg-transparent w-full h-20 px-4 sm:px-8 md:px-36 fixed top-0 z-10 ${scroll ? 'bg-gradient-to-b from-black to-gray-800 shadow-lg' : ''}`}>
+		<header className={`flex items-center bg-transparent w-full h-20 px-4 sm:px-8 md:px-36 fixed top-0 z-10  ${scroll ? 'bg-gradient-to-b from-black to-gray-800 shadow-lg' : ''}`}>
 			<div className="flex-shrink-0">
 				<Link to="/" className="" onClick={() => handleClick('home')}>
 					<h1 className='text-white text-3xl'>Rick & Morty</h1>
