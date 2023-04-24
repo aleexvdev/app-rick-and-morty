@@ -38,6 +38,7 @@ const CardLocationDetails = (props: LocationEstructureCharacter) => {
     let apiCharacter = props.props;
 
     const [character, setCharacter] = useState<CharacterEstructure | null>(null);
+	
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
@@ -61,7 +62,7 @@ const CardLocationDetails = (props: LocationEstructureCharacter) => {
 			<div className="flex items-center justify-center">
 				<div className="bg-white rounded-lg shadow-lg p-5 max-w-md md:p-8">
 					<div className="flex items-center justify-center mb-4">
-						<h1 className="text-2xl font-bold">{character.name}</h1> 
+						<p className="text-2xl font-bold">{character.name}</p> 
 						<span className="bg-gray-400 text-white rounded-lg px-3 py-1 text-sm font-bold ml-2" style={{ backgroundColor: statusColorBg }}>{character.status}</span>
 					</div>
 					<img src={character.image} alt={character.name} className="w-full rounded-t-lg" />

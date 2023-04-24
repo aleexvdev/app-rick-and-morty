@@ -13,7 +13,9 @@ const ListCharacters: React.FC<ListCharactersProps> = ( {searchText, valueStatus
 
 	let apiCharacters = `https://rickandmortyapi.com/api/character/?&name=${searchText}&status=${valueStatus}&gender=${valueGenders}&species=${valueSpecies}`;
 
-  const [characters, setCharacters] = useState<CharacterProps[]>([]);
+  	const [characters, setCharacters] = useState<CharacterProps[]>([]);
+	// const [loading, setLoading] = useState(true);
+
 	useEffect(() => {
 		const fetchData = async () => {
 			try {
@@ -31,6 +33,7 @@ const ListCharacters: React.FC<ListCharactersProps> = ( {searchText, valueStatus
   ); */
 	
 	return (
+
 		<div className='flex flex-wrap md:flex-grow justify-evenly'>
 			{
 				characters.map( (character) => (
