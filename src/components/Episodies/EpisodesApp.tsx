@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import SearchInput from '../Search/SearchInput'
 import { Title } from '../Title'
-import ListEpisodies from './ListEpisodies'
+import ListEpisodes from './ListEpisodes'
 import backgroundImage from '../img/background.png'
 
 const EpisodiesApp = () => {
@@ -23,7 +23,7 @@ const EpisodiesApp = () => {
 			}}
 		>
 			<div className='flex items-center justify-center'>
-				<Title title={'Episodies'} />
+				<Title title={'Episodes'} />
 			</div>
 			<div className='container mx-auto'>
 				<section className='mt-12 mb-8'>
@@ -36,7 +36,7 @@ const EpisodiesApp = () => {
 				<section className='flex flex-col md:flex-row'>
 					<div className="flex-grow p-4 md:w-3/4">
 						<div className="flex flex-col md:flex-row">
-							<ListEpisodies searchText={searchText} />
+							<ListEpisodes searchText={searchText} />
 						</div>
 					</div>
 				</section>

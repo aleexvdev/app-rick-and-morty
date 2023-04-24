@@ -1,22 +1,16 @@
 import React, { Fragment } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import CharactersApp from './components/Characters/CharactersApp';
-import EpisodiesApp from './components/Episodies/EpisodiesApp';
+import CharacterDetails from './components/Characters/DetailsCharacters/CharacterDetails';
+import EpisodeDetails from './components/Episodies/EpisodeDetails/EpisodeDetails';
+import EpisodesApp from './components/Episodies/EpisodesApp';
 import { HomeApp } from './components/Home/HomeApp';
 import HomeMainApp from './components/Home/HomeMainApp';
 import LocationApp from './components/Location/LocationApp';
+import LocationDetails from './components/Location/LocationDetails/LocationDetails';
+import Error404 from './components/NotFound/Error404';
 
-/**
- * 
- * @returns 
- * <Route path="/:id" element={<CardDetails />} /> 
 
-         <Route path="/episodes" element={<Episodes />} /> 
-          <Route path="/episodes/:id" element={<CardDetails />} /> 
-
-      <Route path="/location" element={<Location />} /> 
-  <Route path="/location/:id" element={<CardDetails />} /> 
- */
 function App() {
 
   return (
@@ -26,8 +20,12 @@ function App() {
         <Routes>
           <Route path="/" element={<HomeMainApp />} />
           <Route path="/characters" element={<CharactersApp />} />
+          <Route path="/characters/:id" element={<CharacterDetails />} />
           <Route path="/location" element={<LocationApp />} />
-          <Route path="/episodies" element={<EpisodiesApp />} />
+          <Route path="/location/:id" element={<LocationDetails />} />
+          <Route path="/episodes" element={<EpisodesApp />} />
+          <Route path="/episodes/:id" element={<EpisodeDetails />} />
+          <Route path="*" element={<Error404 />} />
         </Routes>
       </Router>
     </>

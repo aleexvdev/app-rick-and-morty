@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import EpisodiesCard from '../CardApp/EpisodiesCard';
+import EpisodesCard from '../CardApp/EpisodesCard';
  
 interface Episode {
   id: number;
@@ -14,7 +14,7 @@ interface ListSearchProps {
   searchText: string;
 }
 
-const ListEpisodies: React.FC<ListSearchProps> = ({searchText}) => {
+const ListEpisodes: React.FC<ListSearchProps> = ({searchText}) => {
 	
   let apiEpisodies = `https://rickandmortyapi.com/api/episode/?&name=${searchText}`;
 
@@ -36,7 +36,7 @@ const ListEpisodies: React.FC<ListSearchProps> = ({searchText}) => {
     <div className='md:flex-grow flex flex-wrap justify-evenly'>
       {episodes.map((episode) => (
         <div key={episode.id} className="w-full md:w-1/1 lg:w-1/2 xl:w-1/3 p-4">
-            <EpisodiesCard 
+            <EpisodesCard 
               {...episode}
             />
         </div>
@@ -46,4 +46,4 @@ const ListEpisodies: React.FC<ListSearchProps> = ({searchText}) => {
   )
 }
 
-export default ListEpisodies
+export default ListEpisodes

@@ -10,11 +10,11 @@ export interface EpisodeProps {
   characters: string[];
 }
 
-const EpisodiesCard = (props: EpisodeProps) => {
+const EpisodesCard = (props: EpisodeProps) => {
   return (
     <div className="bg-gray-200 rounded-lg shadow-md flex flex-col md:flex-row">
       <div className="flex flex-col p-4">
-				<Link to={`/${props.id}`} className="mb-4 mt-2">
+				<Link to={`/episodes/${props.id}`} className="mb-4 mt-2">
 					<h1 className="text-lg font-semibold">{props.name}</h1>
 				</Link>
         <p className="text-gray-800 mb-1"><span className='font-bold'>Episode: </span>{props.episode}</p>
@@ -25,4 +25,4 @@ const EpisodiesCard = (props: EpisodeProps) => {
   )
 }
 
-export default EpisodiesCard
+export default EpisodesCard
