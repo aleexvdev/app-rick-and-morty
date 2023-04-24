@@ -20,9 +20,11 @@ const EpisodiesApp = () => {
 		setSearchText(text);
 	}
 
+	const title = "Episodes";
+	
 	return (
 		<>
-			{isLoading && <LoadingPage />}
+			{isLoading && <LoadingPage title={title} />}
 			{!isLoading && (
 			<main 
 				className='flex-grow justify-center px-4 sm:px-8 md:px-36 pt-32'

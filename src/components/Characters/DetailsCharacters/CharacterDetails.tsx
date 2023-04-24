@@ -25,7 +25,6 @@ interface CharacterEstructure {
 	created: string;
 }
 
-
 const colorTagBg = {
 	"Alive" : 'green',
 	"Dead" : 'red',
@@ -59,11 +58,12 @@ const CharacterDetails = () => {
         return <div>Cargando...</div>; 
     }
 
+	const title = `Character ${character.name}`;
     const statusColorBg = colorTagBg[character.status as keyof typeof colorTagBg];
 
     return (
 		<>
-			{isLoading && <LoadingPage />}
+			{isLoading && <LoadingPage title={title}/>}
 			{!isLoading && (
 			<main 
 				className='flex-grow justify-center px-4 sm:px-8 md:px-36 pt-32'

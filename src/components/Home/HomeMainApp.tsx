@@ -12,9 +12,11 @@ const HomeMainApp = () => {
 		}, 2000);
 	}, []);
 
+  const title = "Home";
+
   return (
     <>
-			{isLoading && <LoadingPage />}
+			{isLoading && <LoadingPage title={title} />}
 			{!isLoading && (
       <main className='flex flex-wrap items-center justify-center h-screen'>
           <div className='text-center absolute z-10 top-36 left-0 right-0 text-white px-16 md:px-0 w-full md:w-auto'>

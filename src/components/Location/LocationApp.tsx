@@ -19,10 +19,12 @@ const LocationApp = () => {
 	const handleChangeSearch = (text: string) => {
 		setSearchText(text);
 	}
+  
+  const title = "Locations";
 
   return (
     <>
-			{isLoading && <LoadingPage />}
+			{isLoading && <LoadingPage title={title} />}
 			{!isLoading && (
         <main 
           className='flex-grow justify-center px-4 sm:px-8 md:px-36 pt-32'
@@ -34,7 +36,7 @@ const LocationApp = () => {
           }}
         >
           <div className='flex items-center justify-center'>
-            <Title title={'Location'} />
+            <Title title={title} />
           </div>
           <div className='container mx-auto'>
             <section className='mt-12 mb-8'>

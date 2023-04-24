@@ -9,7 +9,6 @@ import ListCharacters from './ListCharacters'
 import backgroundImage from '../img/background.png'
 import LoadingPage from '../Loader/LoadingPage'
 
-
 const CharactersApp = () => {
 
 	const [searchText, setSearchText] = useState('');
@@ -42,7 +41,7 @@ const CharactersApp = () => {
 
 	return (
 		<>
-			{isLoading && <LoadingPage />}
+			{isLoading && <LoadingPage title={'Characters'}/>}
 			{!isLoading && (
 				<main 
 					className='flex-grow justify-center px-4 sm:px-8 md:px-36 pt-32'
