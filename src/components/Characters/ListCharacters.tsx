@@ -27,7 +27,6 @@ const ListCharacters: React.FC<ListCharactersProps> = ( {searchText, valueStatus
 		}
 		fetchData();
 	}, [apiCharacters]);
-
 	/* const filteredCharacters = characters.filter(character =>
     character.name.toLowerCase().includes(searchText.toLowerCase())
   ); */

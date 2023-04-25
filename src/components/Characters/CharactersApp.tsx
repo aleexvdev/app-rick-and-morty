@@ -8,6 +8,7 @@ import { Title } from '../Title'
 import ListCharacters from './ListCharacters'
 import backgroundImage from '../img/background.png'
 import LoadingPage from '../Loader/LoadingPage'
+import FooterPage from '../Footer/FooterPage'
 
 const CharactersApp = () => {
 
@@ -43,6 +44,7 @@ const CharactersApp = () => {
 		<>
 			{isLoading && <LoadingPage title={'Characters'}/>}
 			{!isLoading && (
+				<>
 				<main 
 					className='flex-grow justify-center px-4 sm:px-8 md:px-36 pt-32'
 					style={{
@@ -89,6 +91,8 @@ const CharactersApp = () => {
 						</section>
 					</div>
 				</main>
+				<FooterPage />
+				</>
 			)}
 		</>
 	)
