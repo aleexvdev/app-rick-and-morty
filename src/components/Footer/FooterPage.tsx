@@ -1,7 +1,6 @@
 import React from 'react'
 import { SocialNetworks } from '../../data/SocialNetworks'
 import RickAndMortyImage from '../img/rickandmorty.png'
-
 const FooterPage = () => {
   return (
     <footer className='flex items-center justify-center w-full text-white py-7 bg-slate-800'>
