@@ -1,20 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import axios from "axios";
 import CharacterCard, { CharacterProps } from '../CardApp/CharacterCard'; 
+import Paginate from '../Pagination/Paginate';
 
 interface ListCharactersProps {
   searchText: string;
   valueStatus: string;
   valueGenders: string;
   valueSpecies: string;
+  currentPage: number;
 }
 
-const ListCharacters: React.FC<ListCharactersProps> = ( {searchText, valueStatus, valueGenders, valueSpecies} ) => {
+const ListCharacters: React.FC<ListCharactersProps> = ( {currentPage, searchText, valueStatus, valueGenders, valueSpecies} ) => {
 
-	let apiCharacters = `https://rickandmortyapi.com/api/character/?&name=${searchText}&status=${valueStatus}&gender=${valueGenders}&species=${valueSpecies}`;
+	let apiCharacters = `https://rickandmortyapi.com/api/character/?page=${currentPage}&name=${searchText}&status=${valueStatus}&gender=${valueGenders}&species=${valueSpecies}`;
 
-  	const [characters, setCharacters] = useState<CharacterProps[]>([]);
-	// const [loading, setLoading] = useState(true);
+	const [characters, setCharacters] = useState<CharacterProps[]>([]);
+	// const [infoPage, setInfoPage] = useState([]);
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -27,12 +29,13 @@ const ListCharacters: React.FC<ListCharactersProps> = ( {searchText, valueStatus
 		}
 		fetchData();
 	}, [apiCharacters]);
-	/* const filteredCharacters = characters.filter(character =>
-    character.name.toLowerCase().includes(searchText.toLowerCase())
-  ); */
-	
-	return (
 
+	/* const filteredCharacters = characters.filter(character =>
+		character.name.toLowerCase().includes(searchText.toLowerCase())
+	); */
+
+	return (
+		<>
 		<div className='flex flex-wrap md:flex-grow justify-evenly'>
 			{
 				characters.map( (character) => (
@@ -45,7 +48,7 @@ const ListCharacters: React.FC<ListCharactersProps> = ( {searchText, valueStatus
 				))
 			}
 		</div>
-
+		</>
 	)
 }
 

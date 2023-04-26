@@ -5,10 +5,11 @@ import CbxStatus from '../Filters/CbxStatus'
 import ListFilters from '../Filters/ListFilters'
 import SearchInput from '../Search/SearchInput'
 import { Title } from '../Title'
+import FooterPage from '../Footer/FooterPage'
 import ListCharacters from './ListCharacters'
 import backgroundImage from '../img/background.png'
 import LoadingPage from '../Loader/LoadingPage'
-import FooterPage from '../Footer/FooterPage'
+
 
 const CharactersApp = () => {
 
@@ -17,7 +18,9 @@ const CharactersApp = () => {
 	const [valueGenders, setValueGenders] = useState('');
 	const [valueSpecies, setValueSpecies] = useState('');
 	const [isLoading, setIsLoading] = useState(true);
-
+	const [currentPage, setCurrentPage] = useState(1);
+	const [totalPages, setTotalPages] = useState(1);
+	
 	useEffect(() => {
 		setTimeout(() => {
 			setIsLoading(false);
@@ -85,7 +88,13 @@ const CharactersApp = () => {
 						<section className='flex flex-col md:flex-row'>
 							<div className="flex-grow p-4 md:w-3/4">
 								<div className="flex flex-col md:flex-row">
-									<ListCharacters searchText={searchText} valueStatus={valueStatus} valueGenders={valueGenders} valueSpecies={valueSpecies} />
+									<ListCharacters 
+										searchText={searchText} 
+										valueStatus={valueStatus} 
+										valueGenders={valueGenders} 
+										valueSpecies={valueSpecies} 
+										currentPage={currentPage} 
+									/>
 								</div>
 							</div>
 						</section>

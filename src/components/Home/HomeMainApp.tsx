@@ -25,7 +25,7 @@ const HomeMainApp = () => {
               <div className='flex flex-row items-center justify-center'>
                 {
                   SocialNetworks.map( (social) => (
-                    <a key={social.id} className='mx-3 text-3xl rounded-lg bg-white' href={social.url} target='_blank' rel='noreferrer'>
+                    <a key={social.id} className='mx-3 text-3xl rounded-lg bg-white' href={social.url} target='_blank'>
                       <div className='w-11 h-11 flex items-center justify-center  rounded-lg hover:bg-gray-300'>
                         {social.icon}
                       </div>  

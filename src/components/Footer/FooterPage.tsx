@@ -17,7 +17,7 @@ const FooterPage = () => {
             <div className='flex items-center justify-center'>
                 {
                     SocialNetworks.map( (social) => (
-                        <a key={social.id} className='mx-3 text-lg rounded-full bg-white' href={social.url} target='_blank' rel='noreferrer'>
+                        <a key={social.id} className='mx-3 text-lg rounded-full bg-white' href={social.url} target="_blank" rel="noreferrer">
                             <div className='w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-400'>
                                 {social.icon}
                             </div>  
