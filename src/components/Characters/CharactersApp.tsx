@@ -18,8 +18,6 @@ const CharactersApp = () => {
 	const [valueGenders, setValueGenders] = useState('');
 	const [valueSpecies, setValueSpecies] = useState('');
 	const [isLoading, setIsLoading] = useState(true);
-	const [currentPage, setCurrentPage] = useState(1);
-	const [totalPages, setTotalPages] = useState(1);
 	
 	useEffect(() => {
 		setTimeout(() => {
@@ -93,7 +91,6 @@ const CharactersApp = () => {
 										valueStatus={valueStatus} 
 										valueGenders={valueGenders} 
 										valueSpecies={valueSpecies} 
-										currentPage={currentPage} 
 									/>
 								</div>
 							</div>

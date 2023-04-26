@@ -1,6 +1,9 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { SocialNetworks } from '../../data/SocialNetworks'
 import RickAndMortyImage from '../img/rickandmorty.png'
+import { BsLink45Deg } from 'react-icons/bs';
+
 const FooterPage = () => {
   return (
     <footer className='flex items-center justify-center w-full text-white py-7 bg-slate-800'>
@@ -8,8 +11,13 @@ const FooterPage = () => {
             <div>Data provided by The Rick and Morty API</div>
             <div className="flex items-center justify-center pt-3">
                 <img src={RickAndMortyImage} alt="The Rick and Morty API" className='w-20' />
-                <div className='ml-2'>For more information visit: <a href="https://rickandmortyapi.com/" target='_blank'>RickAndMortyApi.com</a></div>
-                
+                <div className='ml-2 flex items-center justify-center flex-col'>
+                    <span>For more information visit: </span>
+                    <div className='flex items-start justify-between text-center pb-2'>
+                        <BsLink45Deg size={22} />
+                        <Link to="https://rickandmortyapi.com/" target='_blank'>RickAndMortyApi.com</Link>
+                    </div>
+                </div>
             </div>
         </div>
         <div className='ml-5'>
