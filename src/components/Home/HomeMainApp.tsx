@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
 import { SocialNetworks } from '../../data/SocialNetworks';
 import LoadingPage from '../Loader/LoadingPage';
 import { Title } from '../Title'
@@ -25,11 +26,11 @@ const HomeMainApp = () => {
               <div className='flex flex-row items-center justify-center'>
                 {
                   SocialNetworks.map( (social) => (
-                    <a key={social.id} className='mx-3 text-3xl rounded-lg bg-white' href={social.url} target='_blank'>
+                    <Link to={social.url} target='_blank' className='mx-3 text-3xl rounded-lg bg-white' key={social.id}>
                       <div className='w-11 h-11 flex items-center justify-center  rounded-lg hover:bg-gray-300'>
                         {social.icon}
-                      </div>  
-                    </a>
+                      </div> 
+                    </Link>
                   ))
                 }
               </div>
